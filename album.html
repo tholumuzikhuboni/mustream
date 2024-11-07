@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Album Playlist</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <h1 class="logo">Music Stream</h1>
+        <input type="text" id="search-bar" placeholder="Search for songs or artists" class="search-bar">
+    </header>
+
+    <!-- Album Content -->
+    <main>
+        <!-- Album Playlist -->
+        <section class="album-playlist">
+            <h2 id="album-title" class="section-title"></h2>
+            <ul id="album-songs-list" class="song-list"></ul>
+        </section>
+
+        <!-- Top Played Section -->
+        <section class="top-played">
+            <h2 class="section-title">Top Played</h2>
+            <ul id="top-played-list" class="song-list"></ul>
+        </section>
+
+        <!-- Recommendations -->
+        <section class="recommendations">
+            <h2 class="section-title">Recommended for You</h2>
+            <ul id="recommended-songs-list" class="song-list"></ul>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+      </html>
