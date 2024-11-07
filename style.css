@@ -1,0 +1,113 @@
+/* Reset and Basic Styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #121212;
+  color: #ffffff;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Header */
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+header h1 {
+  color: #1DB954;
+  font-size: 2.5em;
+}
+
+#search-bar {
+  width: 80%;
+  padding: 10px;
+  margin-top: 20px;
+  border-radius: 5px;
+  border: none;
+}
+
+/* Music Player */
+#music-player {
+  background-color: #333;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 10px;
+}
+
+#now-playing {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#album-art {
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+  margin-right: 20px;
+}
+
+#song-info {
+  text-align: left;
+}
+
+#song-title {
+  font-size: 1.2em;
+  margin-bottom: 5px;
+}
+
+#song-artist {
+  font-size: 0.9em;
+  color: #aaa;
+}
+
+button {
+  padding: 10px 20px;
+  margin-top: 10px;
+  background-color: #1DB954;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #17a743;
+}
+
+/* Playlist and Artists */
+#playlist, #artists {
+  background-color: #222;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 10px;
+}
+
+#playlist h2, #artists h2 {
+  color: #1DB954;
+  margin-bottom: 10px;
+}
+
+#playlist-list {
+  list-style: none;
+  padding: 0;
+}
+
+#playlist-list li {
+  padding: 10px;
+  border-bottom: 1px solid #444;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#playlist-list li:hover {
+  background-color: #333;
+}
