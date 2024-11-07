@@ -66,8 +66,10 @@ main {
 }
 
 .artist img {
-    width: 100%;
-    border-radius: 8px;
+    width: 120px; /* Consistent width */
+    height: 120px; /* Consistent height */
+    border-radius: 50%; /* Round the image */
+    object-fit: cover; /* Ensures the image covers the area without distortion */
     margin-bottom: 10px;
 }
 
@@ -92,7 +94,9 @@ main {
 }
 
 .album img {
-    width: 100%;
+    width: 100%; /* Make the album cover fill the container */
+    height: 150px; /* Set a fixed height */
+    object-fit: cover; /* Ensure the cover image fills the container without distortion */
     border-radius: 8px;
 }
 
@@ -130,4 +134,4 @@ main {
 .bio-content {
     color: #ddd;
     font-size: 16px;
-  }
+    }
