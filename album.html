@@ -21,19 +21,19 @@
             <ul id="album-songs-list" class="song-list"></ul>
         </section>
 
-        <!-- Top Played Section -->
-        <section class="top-played">
-            <h2 class="section-title">Top Played</h2>
-            <ul id="top-played-list" class="song-list"></ul>
-        </section>
-
-        <!-- Recommendations -->
-        <section class="recommendations">
-            <h2 class="section-title">Recommended for You</h2>
-            <ul id="recommended-songs-list" class="song-list"></ul>
+        <!-- Music Player -->
+        <section class="music-player">
+            <div class="player-controls">
+                <button id="prev-btn" class="player-btn">Prev</button>
+                <button id="play-btn" class="player-btn">Play</button>
+                <button id="next-btn" class="player-btn">Next</button>
+            </div>
+            <div class="progress-container">
+                <input type="range" id="progress-bar" class="progress-bar" value="0" max="100">
+            </div>
         </section>
     </main>
 
     <script src="app.js"></script>
 </body>
-      </html>
+    </html>
