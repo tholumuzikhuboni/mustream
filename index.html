@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mustream Music Streaming</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Mustream</h1>
+    <input type="text" id="search-bar" placeholder="Search for songs or artists" onkeyup="searchSongs()">
+  </header>
+
+  <section id="music-player">
+    <div id="now-playing">
+      <img id="album-art" src="assets/artists/default.jpg" alt="Album Art">
+      <div id="song-info">
+        <h2 id="song-title">Select a song to play</h2>
+        <p id="song-artist">-</p>
+      </div>
+    </div>
+    <audio id="audio-player" controls></audio>
+  </section>
+
+  <section id="playlist">
+    <h2>Your Playlist</h2>
+    <ul id="playlist-list"></ul>
+    <button onclick="addRandomRecommendation()">Add Recommendation</button>
+  </section>
+  
+  <section id="artists">
+    <h2>Artists</h2>
+    <div id="artist-list"></div>
+  </section>
+
+  <script src="app.js"></script>
+</body>
+  </html>
