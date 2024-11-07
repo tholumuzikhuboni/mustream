@@ -2,11 +2,27 @@
   {
     "name": "Artist 1",
     "bio": "This is the biography of Artist 1.",
-    "image": "assets/artists/artist1.jpg"
+    "image": "assets/artists/artist1.jpg",
+    "albums": [
+      {
+        "title": "Album 1",
+        "year": 2022,
+        "cover": "assets/music/album1/cover.jpg",
+        "songs": [1, 2]
+      }
+    ]
   },
   {
     "name": "Artist 2",
     "bio": "This is the biography of Artist 2.",
-    "image": "assets/artists/artist2.jpg"
+    "image": "assets/artists/artist2.jpg",
+    "albums": [
+      {
+        "title": "Album 2",
+        "year": 2023,
+        "cover": "assets/music/album2/cover.jpg",
+        "songs": [3]
+      }
+    ]
   }
 ]
