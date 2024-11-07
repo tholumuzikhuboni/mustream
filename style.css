@@ -99,3 +99,47 @@ main {
 .artist-name {
     font-size: 18px;
     }
+
+/* Music Player */
+.music-player {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.player-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.player-btn {
+    background-color: #1db954;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+.player-btn:hover {
+    background-color: #1ed760;
+}
+
+.progress-container {
+    margin-top: 20px;
+    width: 80%;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 5px;
+    background-color: #333;
+    outline: none;
+    cursor: pointer;
+    }
