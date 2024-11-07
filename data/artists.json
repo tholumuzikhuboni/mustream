@@ -1,27 +1,18 @@
 [
   {
-    "name": "uDumakahle",
-    "bio": "<strong>Real Name:</strong> Mpilo Seluleko Nkosi<br><strong>Born in:</strong> Vryheid, KwaZulu-Natal<br><strong>Stage Names:</strong> Iphathasi, Maphathefika<br><strong>Fans refer to him as:</strong> The GOAT of Maskandi<br><br><strong>Biography:</strong><br>uDumakahle Nkosi is a legendary figure in the world of <strong>maskandi music</strong>, born in Vryheid, KwaZulu-Natal. Known for his deeply meaningful songs, Dumakahle’s music speaks to the heart of his community and beyond. With his powerful and soulful voice, he has captivated audiences across South Africa, earning the title of one of the <strong>best maskandi artists</strong> of his generation.<br><br>Fans affectionately call him <strong>Iphathasi</strong> and <strong>Maphathefika</strong>, names that reflect his influence and stature in the maskandi scene. His lyrics resonate with the struggles, hopes, and triumphs of everyday life, often conveying poignant messages about life, love, and culture. His fans often refer to him as the <strong>GOAT of maskandi</strong>, a testament to his exceptional talent and impact on the genre.<br><br>As an artist, Dumakahle continues to push the boundaries of traditional maskandi while staying true to his roots. His music not only entertains but also preserves and celebrates the rich cultural heritage of Zulu music.",
-    "image": "assets/artists/uDumakahle/udumakahle.jpg",
+    "name": "uDumakahle Nkosi",
+    "image": "assets/artists/udumakahle.jpg",
+    "bio": "uDumakahle Nkosi, born Mpilo Seluleko Nkosi in Vryheid, KZN, is a prominent Maskandi artist known for his deep lyrics...",
     "albums": [
       {
         "title": "Ang'senandaba",
         "year": 2024,
-        "cover": "assets/artists/uDumakahle/ang'senandaba .JPG",
-        "songs": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
-      }
-    ]
-  },
-  {
-    "name": "Ntencane",
-    "bio": "This is the biography of Artist 2.",
-    "image": "assets/artists/Ntencane/ntencane.jpg",
-    "albums": [
-      {
-        "title": "Alingeni",
-        "year": 2024,
-        "cover": "assets/artists/Ntencane/alingeni.jpg",
-        "songs": [16, 17]
+        "cover": "assets/artists/uDumakahle/udumakahle.jpg",
+        "songs": [
+          { "title": "Isbhamu", "artist": "uDumakahle" },
+          { "title": "Ang'senandaba", "artist": "uDumakahle" },
+          { "title": "Emendweni", "artist": "uDumakahle" }
+        ]
       }
     ]
   }
