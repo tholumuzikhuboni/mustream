@@ -3,39 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Music Streaming</title>
+    <title>Music Stream</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <!-- Header -->
     <header class="header">
-        <h1 class="logo">Mustream</h1>
+        <h1 class="logo">Music Stream</h1>
         <input type="text" id="search-bar" placeholder="Search for songs or artists" class="search-bar">
     </header>
 
     <!-- Main Content -->
     <main>
-        <!-- Artists Section -->
-        <section class="artists-section">
-            <h2 class="section-title">Artists</h2>
-            <div id="artist-list" class="artist-list"></div>
+        <!-- Top Played Section -->
+        <section class="top-played">
+            <h2 class="section-title">Top Played</h2>
+            <div id="top-played-list" class="album-list"></div>
         </section>
 
-        <!-- Albums Section -->
-        <section class="albums-section">
-            <h2 class="section-title">Albums</h2>
-            <div id="album-list" class="album-list"></div>
+        <!-- Recommended Section -->
+        <section class="recommendations">
+            <h2 class="section-title">Recommended for You</h2>
+            <div id="recommended-songs-list" class="album-list"></div>
+        </section>
+
+        <!-- Album Section -->
+        <section class="artists-section">
+            <h2 class="section-title">Popular Artists</h2>
+            <div id="artist-list" class="artist-list"></div>
         </section>
     </main>
 
-    <!-- Modal for Artist Bio -->
-    <div id="bio-modal" class="bio-modal">
-        <div class="modal-content">
-            <span class="close-btn" onclick="closeModal()">×</span>
-            <div id="bio-content" class="bio-content"></div>
-        </div>
-    </div>
-
     <script src="app.js"></script>
 </body>
-</html>
+            </html>
