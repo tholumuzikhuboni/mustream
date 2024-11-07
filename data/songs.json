@@ -1,20 +1,20 @@
 [
   {
     "id": 1,
-    "title": "Song 1",
-    "artist": "Artist 1",
-    "file": "assets/music/album1/song1.mp3"
+    "title": "Isbhamu",
+    "artist": "uDumKahle",
+    "file": "assets/music/ang'senandaba/isbhamu.mp3"
   },
   {
     "id": 2,
-    "title": "Song 2",
-    "artist": "Artist 1",
-    "file": "assets/music/album1/song2.mp3"
+    "title": "Ang'senandaba",
+    "artist": "uDumakahle",
+    "file": "assets/music/ang'senandaba/isbhamu.mp3"
   },
   {
-    "id": 3,
-    "title": "Song 3",
-    "artist": "Artist 2",
-    "file": "assets/music/album2/song3.mp3"
+    "id": 16,
+    "title": "Alingeni",
+    "artist": "Ntencane",
+    "file": "assets/music/ang'senandaba/isbhamu.mp3"
   }
 ]
