@@ -1,49 +1,70 @@
-// Load data
-let songs = [];
+// Declare global variables to hold the data
 let artists = [];
-const playlist = [];
+let songs = [];
 
-fetch('data/songs.json')
-  .then(response => response.json())
-  .then(data => songs = data);
-
+// Fetch artists data from 'artists.json'
 fetch('data/artists.json')
-  .then(response => response.json())
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Failed to load artists data');
+    }
+    return response.json();
+  })
   .then(data => {
     artists = data;
-    loadArtists();
-  });
+    console.log("Artists loaded:", artists);  // Debugging log
+    loadArtists();  // Call the function to display artists after loading the data
+  })
+  .catch(error => console.log('Error loading artists:', error));
 
-// Load artists and display their albums
+// Fetch songs data from 'songs.json'
+fetch('data/songs.json')
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Failed to load songs data');
+    }
+    return response.json();
+  })
+  .then(data => {
+    songs = data;
+    console.log("Songs loaded:", songs);  // Debugging log
+  })
+  .catch(error => console.log('Error loading songs:', error));
+
+// Function to display artist information, including their bio
 function loadArtists() {
   const artistList = document.getElementById("artist-list");
-  artistList.innerHTML = "";
+  artistList.innerHTML = "";  // Clear the list
   
+  // Loop through each artist and display their information
   artists.forEach(artist => {
     const artistDiv = document.createElement("div");
     artistDiv.classList.add("artist");
 
-    artistDiv.innerHTML = `<h3>${artist.name}</h3><p>${artist.bio}</p><img src="${artist.image}" alt="${artist.name}" class="artist-image">`;
+    // Add artist name, bio, and image
+    artistDiv.innerHTML = `
+      <h3>${artist.name}</h3>
+      <p>${artist.bio}</p>
+      <img src="${artist.image}" alt="${artist.name}" class="artist-image">
+    `;
 
+    // Add albums for the artist
     artist.albums.forEach(album => {
       const albumDiv = document.createElement("div");
       albumDiv.classList.add("album");
-      albumDiv.innerHTML = `<img src="${album.cover}" alt="${album.title}" class="album-cover"><h4>${album.title} (${album.year})</h4>`;
+      albumDiv.innerHTML = `
+        <img src="${album.cover}" alt="${album.title}" class="album-cover">
+        <h4>${album.title} (${album.year})</h4>
+      `;
       
+      // Add the songs for each album
       const songList = document.createElement("ul");
-      songList.classList.add("song-list");
       album.songs.forEach(songId => {
         const song = songs.find(s => s.id === songId);
         if (song) {
           const songItem = document.createElement("li");
           songItem.textContent = song.title;
           songItem.onclick = () => playSong(song);
-          
-          const addToPlaylistButton = document.createElement("button");
-          addToPlaylistButton.textContent = "+ Add to Playlist";
-          addToPlaylistButton.onclick = () => addToPlaylist(song);
-
-          songItem.appendChild(addToPlaylistButton);
           songList.appendChild(songItem);
         }
       });
@@ -56,31 +77,11 @@ function loadArtists() {
   });
 }
 
-// Play song function
+// Function to play a song when clicked
 function playSong(song) {
   const audioPlayer = document.getElementById("audio-player");
   audioPlayer.src = song.file;
   document.getElementById("song-title").textContent = song.title;
   document.getElementById("song-artist").textContent = song.artist;
-  document.getElementById("album-art").src = artists
-    .find(artist => artist.name === song.artist)
-    .albums
-    .find(album => album.songs.includes(song.id))
-    .cover || "assets/artists/default.jpg";
   audioPlayer.play();
-}
-
-// Add to Playlist
-function addToPlaylist(song) {
-  playlist.push(song);
-  displayPlaylist();
-}
-
-// Display Playlist
-function displayPlaylist() {
-  const playlistList = document.getElementById("playlist-list");
-  playlistList.innerHTML = "";
-  
-  playlist.forEach((song, index) => {
-    const listItem = document.createElement("li");
-    listItem.textContent = `${song.title} - ${song.artist
+    }
