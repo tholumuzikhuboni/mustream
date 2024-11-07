@@ -69,3 +69,82 @@ function showArtistBio(artistName) {
 function closeModal() {
   document.getElementById("bio-modal").style.display = "none";
 }
+function loadAlbums() {
+  const albumList = document.getElementById("album-list");
+  albumList.innerHTML = "";
+
+  artists.forEach(artist => {
+    artist.albums.forEach(album => {
+      const albumDiv = document.createElement("div");
+      albumDiv.classList.add("album");
+      albumDiv.innerHTML = `
+        <img src="${album.cover}" alt="${album.title}">
+        <h4>${album.title} (${album.year})</h4>
+      `;
+      albumDiv.onclick = () => openAlbumPage(album);
+      albumList.appendChild(albumDiv);
+    });
+  });
+}
+
+function openAlbumPage(album) {
+  // Store the album data in localStorage
+  localStorage.setItem('selectedAlbum', JSON.stringify(album));
+
+  // Navigate to the album page
+  window.location.href = 'album.html';
+                                              }
+// Load album data from localStorage and populate the page
+document.addEventListener("DOMContentLoaded", function() {
+  const selectedAlbum = JSON.parse(localStorage.getItem('selectedAlbum'));
+
+  if (selectedAlbum) {
+    // Set the album title
+    document.getElementById("album-title").textContent = selectedAlbum.title;
+
+    // Load the album songs into the playlist
+    const albumSongsList = document.getElementById("album-songs-list");
+    selectedAlbum.songs.forEach(song => {
+      const songItem = document.createElement("li");
+      songItem.textContent = `${song.title} - ${song.artist}`;
+      albumSongsList.appendChild(songItem);
+    });
+
+    // Load top played songs (mock data for now)
+    const topPlayedList = document.getElementById("top-played-list");
+    // Example top played songs (this could be fetched from a server in the future)
+    const topPlayedSongs = getTopPlayedSongs();
+    topPlayedSongs.forEach(song => {
+      const songItem = document.createElement("li");
+      songItem.textContent = `${song.title} - ${song.artist}`;
+      topPlayedList.appendChild(songItem);
+    });
+
+    // Load recommended songs (mock data for now)
+    const recommendedSongsList = document.getElementById("recommended-songs-list");
+    const recommendedSongs = getRecommendedSongs();
+    recommendedSongs.forEach(song => {
+      const songItem = document.createElement("li");
+      songItem.textContent = `${song.title} - ${song.artist}`;
+      recommendedSongsList.appendChild(songItem);
+    });
+  }
+});
+
+// Mock top played songs (this should be dynamic)
+function getTopPlayedSongs() {
+  return [
+    { title: "Song 1", artist: "Artist 1" },
+    { title: "Song 2", artist: "Artist 2" },
+    { title: "Song 3", artist: "Artist 3" }
+  ];
+}
+
+// Mock recommended songs (this should be dynamic based on user preferences)
+function getRecommendedSongs() {
+  return [
+    { title: "Song A", artist: "Artist A" },
+    { title: "Song B", artist: "Artist B" },
+    { title: "Song C", artist: "Artist C" }
+  ];
+    }
