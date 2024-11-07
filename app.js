@@ -148,3 +148,59 @@ function getRecommendedSongs() {
     { title: "Song C", artist: "Artist C" }
   ];
     }
+
+document.addEventListener("DOMContentLoaded", function() {
+    // Fetch the selected album from localStorage
+    const selectedAlbum = JSON.parse(localStorage.getItem('selectedAlbum'));
+    
+    if (selectedAlbum) {
+        // Set the album title
+        document.getElementById("album-title").textContent = selectedAlbum.title;
+
+        // Display the album's songs in the list
+        const albumSongsList = document.getElementById("album-songs-list");
+        selectedAlbum.songs.forEach((song, index) => {
+            const songItem = document.createElement("li");
+            songItem.textContent = `${song.title} - ${song.artist}`;
+            albumSongsList.appendChild(songItem);
+        });
+
+        // Set up the music player functionality
+        let currentSongIndex = 0;
+        let isPlaying = false;
+        let audio = new Audio(selectedAlbum.songs[currentSongIndex].audioUrl);
+
+        // Play/Pause functionality
+        const playBtn = document.getElementById("play-btn");
+        playBtn.addEventListener("click", () => {
+            if (isPlaying) {
+                audio.pause();
+                playBtn.textContent = "Play";
+            } else {
+                audio.play();
+                playBtn.textContent = "Pause";
+            }
+            isPlaying = !isPlaying;
+        });
+
+        // Next song functionality
+        const nextBtn = document.getElementById("next-btn");
+        nextBtn.addEventListener("click", () => {
+            currentSongIndex = (currentSongIndex + 1) % selectedAlbum.songs.length;
+            audio.src = selectedAlbum.songs[currentSongIndex].audioUrl;
+            audio.play();
+            playBtn.textContent = "Pause";
+            isPlaying = true;
+        });
+
+        // Previous song functionality
+        const prevBtn = document.getElementById("prev-btn");
+        prevBtn.addEventListener("click", () => {
+            currentSongIndex = (currentSongIndex - 1 + selectedAlbum.songs.length) % selectedAlbum.songs.length;
+            audio.src = selectedAlbum.songs[currentSongIndex].audioUrl;
+            audio.play();
+            playBtn.textContent = "Pause";
+            isPlaying = true;
+        });
+
+        //
